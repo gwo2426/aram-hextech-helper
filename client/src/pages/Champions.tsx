@@ -9,8 +9,8 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { champions, roles, getTierColor, getTierLabel } from "@/data/champions";
-import { augments } from "@/data/augments";
+import { allChampions, roles, getTierColor, getTierLabel, type Champion } from "@/data/champions-full";
+import { allAugments } from "@/data/augments-complete";
 import { useState, useMemo } from "react";
 import { Search, TrendingUp, Users } from "lucide-react";
 
@@ -19,16 +19,16 @@ export default function Champions() {
   const [selectedRole, setSelectedRole] = useState("全部");
 
   const filteredChampions = useMemo(() => {
-    return champions.filter((champion) => {
+    return allChampions.filter((champion) => {
       const matchesSearch = 
         champion.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         champion.nameEn.toLowerCase().includes(searchQuery.toLowerCase());
       
-      const matchesRole = selectedRole === "全部" || champion.role === selectedRole;
+      const matchesRole = selectedRole === "全部" || champion.role.includes(selectedRole);
       
       return matchesSearch && matchesRole;
     }).sort((a, b) => {
-      const tierOrder = { S: 0, A: 1, B: 2, C: 3 };
+      const tierOrder: Record<string, number> = { 'S+': 0, S: 1, A: 2, B: 3, C: 4, D: 5 };
       if (tierOrder[a.tier] !== tierOrder[b.tier]) {
         return tierOrder[a.tier] - tierOrder[b.tier];
       }
@@ -37,7 +37,7 @@ export default function Champions() {
   }, [searchQuery, selectedRole]);
 
   const getAugmentName = (augmentId: string) => {
-    const augment = augments.find(a => a.id === augmentId);
+    const augment = allAugments.find(a => a.id === augmentId);
     return augment ? augment.name : augmentId;
   };
 
@@ -56,12 +56,12 @@ export default function Champions() {
             <Input placeholder="搜索英雄名称..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="pl-10 h-12 bg-card/50 border-border/50 focus:border-primary neon-glow" />
           </div>
           <div className="flex flex-wrap gap-2">
-            {roles.map((role) => (
+            {roles.map((role: string) => (
               <Button key={role} variant={selectedRole === role ? "default" : "outline"} onClick={() => setSelectedRole(role)} className={`${selectedRole === role ? "neon-glow" : "border-border/50"} transition-all`}>{role}</Button>
             ))}
           </div>
         </div>
-        <div className="mb-6 text-muted-foreground">找到 <span className="text-primary font-mono font-bold">{filteredChampions.length}</span> 个英雄</div>
+        <div className="mb-6 text-muted-foreground">找到 <span className="text-primary font-mono font-bold">{filteredChampions.length}</span> / {allChampions.length} 个英雄</div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {filteredChampions.map((champion) => (
             <Card key={champion.id} className="cyber-card p-6">
@@ -82,7 +82,7 @@ export default function Champions() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 text-muted-foreground text-xs mb-1"><Users className="w-3 h-3" />登场率</div>
-                  <div className="text-lg font-bold font-mono text-primary">{champion.playRate}%</div>
+                  <div className="text-lg font-bold font-mono text-primary">{champion.pickRate}%</div>
                 </div>
               </div>
               <div className="mb-4">
