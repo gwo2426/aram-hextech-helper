@@ -3,6 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Cyberpunk Futurism Design - ARAM Hextech Helper
+ * Primary: Neon Cyan (#00d9ff)
+ * Secondary: Electric Purple (#a855f7)
+ * Accent: Hextech Gold (#fbbf24)
+ * Background: Deep Blue-Black (#0a0e27)
+ * Card: Deep Blue-Purple (#151937)
+ */
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -43,83 +51,59 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  /* Cyberpunk color palette */
+  --primary: oklch(0.75 0.2 195); /* Neon Cyan */
+  --primary-foreground: oklch(0.1 0.01 240);
+  --sidebar-primary: oklch(0.7 0.2 195);
+  --sidebar-primary-foreground: oklch(0.1 0.01 240);
+  --chart-1: oklch(0.7 0.2 195);
+  --chart-2: oklch(0.65 0.25 290);
+  --chart-3: oklch(0.75 0.15 45);
+  --chart-4: oklch(0.6 0.2 195);
+  --chart-5: oklch(0.55 0.25 290);
+  --radius: 0.25rem;
+  --background: oklch(0.12 0.03 240); /* Deep blue-black */
+  --foreground: oklch(0.95 0.01 195); /* Light cyan-white */
+  --card: oklch(0.18 0.04 250); /* Deep blue-purple */
+  --card-foreground: oklch(0.95 0.01 195);
+  --popover: oklch(0.15 0.04 245);
+  --popover-foreground: oklch(0.95 0.01 195);
+  --secondary: oklch(0.65 0.25 290); /* Electric purple */
+  --secondary-foreground: oklch(0.95 0.01 195);
+  --muted: oklch(0.25 0.03 245);
+  --muted-foreground: oklch(0.6 0.05 195);
+  --accent: oklch(0.75 0.15 45); /* Hextech gold */
+  --accent-foreground: oklch(0.1 0.01 240);
+  --destructive: oklch(0.6 0.25 25);
+  --destructive-foreground: oklch(0.95 0.01 195);
+  --border: oklch(0.35 0.1 195); /* Cyan border */
+  --input: oklch(0.25 0.05 240);
+  --ring: oklch(0.75 0.2 195);
+  --sidebar: oklch(0.15 0.04 245);
+  --sidebar-foreground: oklch(0.95 0.01 195);
+  --sidebar-accent: oklch(0.25 0.05 245);
+  --sidebar-accent-foreground: oklch(0.95 0.01 195);
+  --sidebar-border: oklch(0.35 0.1 195);
+  --sidebar-ring: oklch(0.75 0.2 195);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+  }
+  
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -134,24 +118,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +133,140 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1400px;
     }
   }
+  
+  /* Cyberpunk neon glow effects */
+  .neon-glow {
+    box-shadow: 
+      0 0 5px rgba(0, 217, 255, 0.5),
+      0 0 10px rgba(0, 217, 255, 0.3),
+      0 0 20px rgba(0, 217, 255, 0.2);
+  }
+  
+  .neon-glow-purple {
+    box-shadow: 
+      0 0 5px rgba(168, 85, 247, 0.5),
+      0 0 10px rgba(168, 85, 247, 0.3),
+      0 0 20px rgba(168, 85, 247, 0.2);
+  }
+  
+  .neon-glow-gold {
+    box-shadow: 
+      0 0 5px rgba(251, 191, 36, 0.5),
+      0 0 10px rgba(251, 191, 36, 0.3),
+      0 0 20px rgba(251, 191, 36, 0.2);
+  }
+  
+  .neon-text {
+    text-shadow: 
+      0 0 5px rgba(0, 217, 255, 0.8),
+      0 0 10px rgba(0, 217, 255, 0.6),
+      0 0 20px rgba(0, 217, 255, 0.4);
+  }
+  
+  .neon-text-purple {
+    text-shadow: 
+      0 0 5px rgba(168, 85, 247, 0.8),
+      0 0 10px rgba(168, 85, 247, 0.6),
+      0 0 20px rgba(168, 85, 247, 0.4);
+  }
+  
+  .neon-text-gold {
+    text-shadow: 
+      0 0 5px rgba(251, 191, 36, 0.8),
+      0 0 10px rgba(251, 191, 36, 0.6),
+      0 0 20px rgba(251, 191, 36, 0.4);
+  }
+  
+  /* Hexagon pattern background */
+  .hexagon-pattern {
+    background-image: url('https://private-us-east-1.manuscdn.com/sessionFile/Iz6SHPeLOM7iXXZa9kZ4Sb/sandbox/MuxsvA9e0vYz4lq2gjFZvs-img-4_1770907249000_na1fn_aGV4dGVjaC1wYXR0ZXJu.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvSXo2U0hQZUxPTTdpWFhaYTlrWjRTYi9zYW5kYm94L011eHN2QTllMHZZejRscTJnakZadnMtaW1nLTRfMTc3MDkwNzI0OTAwMF9uYTFmbl9hR1Y0ZEdWamFDMXdZWFIwWlhKdS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=fpdibHF5WceIyEUfKSJNz6X7dUeBRsK~vt2txzNQlmf8yP3klQ7GH~uBXFh5Uwr1x7fnatLjhHr7aqKoDuuKhGy4Gnu4aoQdH~Xc56kn034ah6bsXm340sZ3-2lVRP~hYNhCH2YmCS-IWGYcq16njg6WQ6aXlkuMVOykYgfPv0h5ryygS0ueCWKkwNKt~J5C7myNrNqPvdtFa9-t622ecJtYm3MFwEOm4lzyRhvya3wU3-48OQ3h4Scw0OpDMcvkA8i3OPkdMVYTYAAsuO73gk~VyNdeJgxKgJTEzSkiDO8G71qYtGxfqyckqi-nAaGco~-FnkNHQbTBOsIaH-6eTw__');
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    opacity: 0.1;
+  }
+  
+  /* Scanning line animation */
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+  
+  .scan-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(0, 217, 255, 0.8), 
+      transparent
+    );
+    animation: scan 8s linear infinite;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  /* Cyberpunk card style */
+  .cyber-card {
+    position: relative;
+    background: oklch(0.18 0.04 250 / 0.8);
+    border: 1px solid oklch(0.35 0.1 195);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .cyber-card:hover {
+    border-color: oklch(0.75 0.2 195);
+    box-shadow: 
+      0 0 10px rgba(0, 217, 255, 0.3),
+      0 0 20px rgba(0, 217, 255, 0.2),
+      0 0 30px rgba(0, 217, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  /* Hexagon clip path for images */
+  .hexagon-clip {
+    clip-path: polygon(
+      30% 0%, 70% 0%,
+      100% 30%, 100% 70%,
+      70% 100%, 30% 100%,
+      0% 70%, 0% 30%
+    );
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(0.15 0.04 245);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.35 0.1 195);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.75 0.2 195);
 }
