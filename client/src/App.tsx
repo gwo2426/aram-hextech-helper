@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Router as WouterRouter } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -9,6 +9,9 @@ import Augments from "./pages/Augments";
 import Champions from "./pages/Champions";
 import Builds from "./pages/Builds";
 import StockReport from "./pages/StockReport";
+
+// Detect GitHub Pages base path
+const BASE_PATH = import.meta.env.BASE_URL || "/";
 
 function Router() {
   return (
@@ -25,6 +28,9 @@ function Router() {
 }
 
 function App() {
+  // Strip trailing slash from base path for wouter
+  const base = BASE_PATH.endsWith("/") ? BASE_PATH.slice(0, -1) : BASE_PATH;
+
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
@@ -32,7 +38,9 @@ function App() {
           <Toaster />
           {/* Scanning line effect */}
           <div className="scan-line" />
-          <Router />
+          <WouterRouter base={base}>
+            <Router />
+          </WouterRouter>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
