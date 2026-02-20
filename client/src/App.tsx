@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Augments from "./pages/Augments";
 import Champions from "./pages/Champions";
 import Builds from "./pages/Builds";
+import StockReport from "./pages/StockReport";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path={"/augments"} component={Augments} />
       <Route path={"/champions"} component={Champions} />
       <Route path={"/builds"} component={Builds} />
+      <Route path={"/stock-report"} component={StockReport} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

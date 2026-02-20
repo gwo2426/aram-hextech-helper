@@ -5,7 +5,7 @@
  */
 
 import { Link, useLocation } from "wouter";
-import { Hexagon, Sparkles, Users, Layers } from "lucide-react";
+import { Hexagon, Sparkles, Users, Layers, BarChart3 } from "lucide-react";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -15,6 +15,7 @@ export default function Navigation() {
     { path: "/augments", label: "符文库", icon: Sparkles },
     { path: "/champions", label: "英雄", icon: Users },
     { path: "/builds", label: "套路", icon: Layers },
+    { path: "/stock-report", label: "股票分析", icon: BarChart3 },
   ];
 
   return (
