@@ -465,7 +465,7 @@ export const allChampions: Champion[] = [
     pickRate: 3.12,
     role: ['战士'],
     difficulty: '简单',
-    recommendedAugments: ['基础套餐', '炼狱魊', '云端魂'],
+    recommendedAugments: ['基础套餐', '炼狱魂', '云端魂'],
     playstyle: '狂战士，血越少越强',
     strengths: ['大招免疫控制', '血少伤害高', '追击能力强'],
     weaknesses: ['容易被风筝', '无位移']
@@ -535,7 +535,7 @@ export const allChampions: Champion[] = [
     pickRate: 4.56,
     role: ['法师'],
     difficulty: '中等',
-    recommendedAugments: ['奶酪套餐', '大脑袋', '海克斯魊'],
+    recommendedAugments: ['奶酪套餐', '大脑袋', '海克斯魂'],
     playstyle: '卡牌大师，黄牌控制',
     strengths: ['黄牌点控', 'AOE伤害', '大招视野'],
     weaknesses: ['脆皮', '大招在ARAM用处有限']

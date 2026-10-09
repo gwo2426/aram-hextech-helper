@@ -1,6 +1,6 @@
-// 完整的ARAM海克斯符文数据库 - 基于Patch 16.3数据
-// 数据来源: League of Legends Wiki
-// 由于符文数量巨大(180+)，这里包含最重要和最常用的符文
+// ARAM 海克斯符文资料快照。
+// 主要参考：League of Legends Wiki；当前仅收录已人工整理的条目，不宣称为完整数据库。
+// 效果与可用性可能随版本变动，请以游戏客户端和官方公告为准。
 
 export interface Augment {
   id: string;
